@@ -1,0 +1,27 @@
+link - https://practice.geeksforgeeks.org/problems/run-length-encoding/1/
+
+
+
+string encode(string src)
+{     
+  //Your code here 
+  string ans="";
+  int count,i=0,j;
+  while(i<src.size())
+  {
+      count=1;
+      j=i+1;
+      ans+=src[i];
+
+      while(j<src.size() and src[i]==src[j])
+      {
+          count++;
+          j++;
+      }
+      ans+=to_string(count);
+      i=j;
+      
+  }
+  return ans;
+}     
+ 
