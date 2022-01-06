@@ -1,0 +1,39 @@
+problem link - https://practice.geeksforgeeks.org/problems/ugly-numbers2254/1/#
+
+
+class Solution{
+public:	
+	// #define ull unsigned long long
+	/* Function to get the nth ugly number*/
+	ull getNthUglyNo(int n) {
+	    // code here
+	     if(n==1)
+	        return 1;
+	    ull arr[n];
+	    ull p2=0,p3=0,p5=0;
+	    ull temp,n2=2,n3=3,n5=5;
+	    temp=1;
+	    arr[0]=1;
+	    for(ull i=1;i<n;i++)
+	    {
+	        temp=min(n2,min(n3,n5));
+	        arr[i]=temp;
+	        if(temp==n2)
+	        {
+	            p2++;
+	            n2=arr[p2]*2;
+	        }
+	        if(temp==n3)
+	        {
+	            p3++;
+	            n3=arr[p3]*3;
+	        }
+	        if(temp==n5)
+	        {
+	            p5++;
+	            n5=arr[p5]*5;
+	        }
+	    }
+	    return temp;
+	}
+};
