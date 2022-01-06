@@ -1,0 +1,29 @@
+link - https://leetcode.com/problems/greatest-common-divisor-of-strings/
+
+
+class Solution {
+public:
+    string gcdOfStrings(string str1, string str2) {
+        int n1=str1.size(),n2=str2.size();
+        int gcd= __gcd(n1,n2);
+        
+        if(check(str1,str2,gcd) and check(str2,str2,gcd))
+            return str1.substr(0,gcd);
+        else
+            return "";
+    }
+    
+    bool check(string a,string b,int t)
+    {
+        int i=0,j=0;
+        while(i<a.size())
+        {
+            if(a[i]!=b[j%t])
+                return 0;
+            i++;
+            j++;
+        }
+        return 1;
+    }
+   
+};
