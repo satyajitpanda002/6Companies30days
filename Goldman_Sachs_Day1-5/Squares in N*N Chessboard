@@ -1,0 +1,18 @@
+link - https://practice.geeksforgeeks.org/problems/squares-in-nn-chessboard1801/1
+
+
+
+class Solution {
+  public:
+    long long squaresInChessBoard(long long N) {
+        // code here
+        #define ll long long 
+        ll t,ans=0;
+        for(ll i=1;i<=N;i++)
+        {
+            t=(N-i)+1;
+            ans+=(t*t);
+        }
+        return ans;
+    }
+};
